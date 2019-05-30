@@ -34,6 +34,10 @@ class DefaultModel{
 
       include('View/Insertar.php');
     
+    }else if(isset($_GET['seleccionarRuta'])) {
+
+      include('View/seleccionarRuta.php');
+    
     } else{
 
       include_once('View/indexView.php');
