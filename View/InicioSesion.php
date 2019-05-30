@@ -23,10 +23,10 @@
       
    <br><br>
 
-      <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-      <input type="text" id="pass" class="fadeIn third" name="login" placeholder="password">
+      <input type="text" id="login" class="fadeIn second" name="login" placeholder="Usuario">
+      <input type="text" id="pass" class="fadeIn third" name="login" placeholder="Contraseña">
       <br><br>
-      <a class="btn btn-info" class="fadeIn fourth"  href="?administrador"> Log In </a>
+      <a class="btn btn-info" class="fadeIn fourth"  href="?administrador">Iniciar Sesión</a>
       <br>
     </form>
     <br>
