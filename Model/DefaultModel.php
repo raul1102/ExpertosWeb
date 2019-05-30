@@ -33,6 +33,11 @@ class DefaultModel{
     } else if(isset($_GET['insertar'])) {
 
       include('View/Insertar.php');
+      
+    
+    } else if(isset($_GET['informacionSitios'])) {
+      
+            include('View/InformacionSitios.php');
     
     } else{
 
