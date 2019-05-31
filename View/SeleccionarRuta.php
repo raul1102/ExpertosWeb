@@ -174,7 +174,7 @@ Iglesia de Orosi
 
 <div class="modal-footer">
 <button type="button"  class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-<button type="button" onClick="funcion1()" class="btn btn-primary" style="background-color: #17a2b8; border-color: #17a2b8;">Agregar a la Ruta</button>
+<button type="button" id="bt1" onClick="funcion1()" class="btn btn-primary" style="background-color: #17a2b8; border-color: #17a2b8;">Agregar a la Ruta</button>
  </div>
       </div>
     </div>
@@ -222,7 +222,7 @@ Iglesia de Orosi
 
 <div class="modal-footer">
 <button type="button"  class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-<button type="button" onClick="funcion2()" class="btn btn-primary" style="background-color: #17a2b8; border-color: #17a2b8;">Agregar a la Ruta</button>
+<button type="button" id="bt2" onClick="funcion2()" class="btn btn-primary" style="background-color: #17a2b8; border-color: #17a2b8;">Agregar a la Ruta</button>
  </div>
 
       </div>
@@ -272,7 +272,7 @@ Iglesia de Orosi
 
 <div class="modal-footer">
 <button type="button"  class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-<button type="button" onClick="funcion3()" class="btn btn-primary" style="background-color: #17a2b8; border-color: #17a2b8;">Agregar a la Ruta</button>
+<button type="button" id="bt3" onClick="funcion3()" class="btn btn-primary" style="background-color: #17a2b8; border-color: #17a2b8;">Agregar a la Ruta</button>
  </div>
 
       </div>
@@ -322,7 +322,7 @@ Iglesia de Orosi
 
 <div class="modal-footer">
 <button type="button"  class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-<button type="button" onClick="funcion4()" class="btn btn-primary" style="background-color: #17a2b8; border-color: #17a2b8;">Agregar a la Ruta</button>
+<button type="button" id="bt4" onClick="funcion4()" class="btn btn-primary" style="background-color: #17a2b8; border-color: #17a2b8;">Agregar a la Ruta</button>
  </div>
 
       </div>
@@ -351,6 +351,24 @@ function funcion1(){
           center: {lat: 41.85, lng: -87.65}
         });
         directionsDisplay.setMap(map);
+
+        var marker = new google.maps.Marker({
+        position: {lat: 9.839486, lng: -83.890180},
+        map: map,
+      
+        title: 'Ver informacion'
+      });
+
+      map.addListener('center_changed', function() {
+        // 3 seconds after the center of the map has changed, pan back to the
+        // marker.
+        
+      });
+
+      marker.addListener('click', function() {
+        $("#exampleModalCenter2").modal('show');
+      });
+
         latitud=9.833290;
         longitud=-83.878485;
        calculateAndDisplayRoute(directionsService, directionsDisplay);
@@ -360,7 +378,7 @@ function funcion1(){
        $("#exampleModalCenter1").modal('hide');//ocultamos el modal
       $('body').removeClass('modal-open');//eliminamos la clase del body para poder hacer scroll
       $('.modal-backdrop').remove();
-  document.getElementById("boton1").disabled = true;
+  document.getElementById("bt1").disabled = true;
 
 }
 function funcion2(){
@@ -372,6 +390,25 @@ function funcion2(){
           center: {lat: 41.85, lng: -87.65}
         });
         directionsDisplay.setMap(map);
+
+
+        var marker = new google.maps.Marker({
+        position: {lat: 9.818617, lng: -83.858258},
+        map: map,
+      
+        title: 'Ver informacion'
+      });
+
+      map.addListener('center_changed', function() {
+        // 3 seconds after the center of the map has changed, pan back to the
+        // marker.
+        
+      });
+
+      marker.addListener('click', function() {
+        $("#exampleModalCenter3").modal('show');
+      });
+
         latitud=9.839486;
       longitud=-83.890180;
        calculateAndDisplayRoute(directionsService, directionsDisplay);
@@ -379,7 +416,7 @@ function funcion2(){
    $("#exampleModalCenter2").modal('hide');//ocultamos el modal
   $('body').removeClass('modal-open');//eliminamos la clase del body para poder hacer scroll
   $('.modal-backdrop').remove();    
-  document.getElementById("boton2").disabled = true;
+  document.getElementById("bt2").disabled = true;
 
 }
 
@@ -392,6 +429,24 @@ var directionsService = new google.maps.DirectionsService;
         center: {lat: 41.85, lng: -87.65}
       });
       directionsDisplay.setMap(map);
+
+      var marker = new google.maps.Marker({
+        position: {lat: 9.798159, lng: -83.855588},
+        map: map,
+      
+        title: 'Ver informacion'
+      });
+
+      map.addListener('center_changed', function() {
+        // 3 seconds after the center of the map has changed, pan back to the
+        // marker.
+        
+      });
+
+      marker.addListener('click', function() {
+        $("#exampleModalCenter4").modal('show');
+      });
+
       latitud=9.818617;
       longitud=-83.858258;
      calculateAndDisplayRoute(directionsService, directionsDisplay);
@@ -400,7 +455,7 @@ var directionsService = new google.maps.DirectionsService;
   $("#exampleModalCenter3").modal('hide');//ocultamos el modal
   $('body').removeClass('modal-open');//eliminamos la clase del body para poder hacer scroll
   $('.modal-backdrop').remove(); 
-  document.getElementById("boton3").disabled = true;
+  document.getElementById("bt3").disabled = true;
 
 }
 
@@ -421,7 +476,7 @@ var directionsService = new google.maps.DirectionsService;
  $("#exampleModalCenter4").modal('hide');//ocultamos el modal
   $('body').removeClass('modal-open');//eliminamos la clase del body para poder hacer scroll
   $('.modal-backdrop').remove();
-  document.getElementById("boton4").disabled = true;
+  document.getElementById("bt4").disabled = true;
 }
 
 function funcion5(){
@@ -441,6 +496,23 @@ function funcion5(){
           center: {lat: 41.85, lng: -87.65}
         });
         directionsDisplay.setMap(map);
+
+        var marker = new google.maps.Marker({
+        position: {lat: 9.833290, lng: -83.878485},
+        map: map,
+      
+        title: 'Ver informacion'
+      });
+
+      map.addListener('center_changed', function() {
+        // 3 seconds after the center of the map has changed, pan back to the
+        // marker.
+        
+      });
+
+      marker.addListener('click', function() {
+        $("#exampleModalCenter1").modal('show');
+      });
        
           calculateAndDisplayRoute(directionsService, directionsDisplay);
       }
