@@ -66,7 +66,7 @@
   <div class="row">
     <div class="col-sm-6">
       <p style="color:cornflowerblue; font-weight: bold;">Ubicación:</p>
-      <p>Orosi, Cartago</p>
+      <p>Navarro del Socorro, Cartago</p>
       <p></p>
     </div>
     <div class="col-sm-6">
@@ -83,6 +83,228 @@
 </div>
 
 </div>
+
+
+
+
+<br></br>
+
+
+<!-- Button segundo modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">
+ Ver información
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Información sobre sitio</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        
+      <div class="card" style="width: 18rem; margin:auto;">
+  <img class="card-img-top" src="https://travelcostarica.cr/wp-content/uploads/2017/11/Iglesia-Colonial-del-Valle-de-Orosi-Cartago.png" alt="Card image cap">
+  <div class="card-body">
+    <p class="card-text">Iglesia Colonial del Valle de Orosi</p>
+  </div>
+</div>
+<br></br>
+<div class="container">
+  <h1>Iglesia Colonial del Valle de Orosi</h1>
+  <br></br>
+  <div class="row">
+    <div class="col-sm-6">
+      <p style="color:cornflowerblue; font-weight: bold;">Ubicación:</p>
+      <p>Orosi, Cartago</p>
+      <p></p>
+    </div>
+    <div class="col-sm-6">
+      <p style="color:cornflowerblue; font-weight: bold;">Descripción:</p>
+      <p>Es una de las más antiguas edificaciones del país, que datan de la época de la Colonia española, que persisten hasta la actualidad.</p>
+    </div>
+  </div>
+</div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+
+
+
+<br></br>
+
+
+<!-- Button tercer modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter3">
+ Ver información
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Información sobre sitio</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        
+      <div class="card" style="width: 18rem; margin:auto;">
+  <img class="card-img-top" src="https://images.visitarcostarica.com/jardin-botanico-lankester-costa-rica.jpg" alt="Card image cap">
+  <div class="card-body">
+    <p class="card-text">Jardín Botánico Lankester</p>
+  </div>
+</div>
+<br></br>
+<div class="container">
+  <h1>Jardín Botánico Lankester</h1>
+  <br></br>
+  <div class="row">
+    <div class="col-sm-6">
+      <p style="color:cornflowerblue; font-weight: bold;">Ubicación:</p>
+      <p>Paraíso, Cartago</p>
+      <p></p>
+    </div>
+    <div class="col-sm-6">
+      <p style="color:cornflowerblue; font-weight: bold;">Descripción:</p>
+      <p>Este jardín botánico que forma parte de la Universidad de Costa Rica desde el año 1973, se ubica en el cantón de Paraíso, provincia de Cartago a unos 45 minutos en automóvil, de la capital San José de Costa Rica.</p>
+    </div>
+  </div>
+</div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+
+<br></br>
+
+
+<!-- Button tercer modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter4">
+ Ver información
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Información sobre sitio</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        
+      <div class="card" style="width: 18rem; margin:auto;">
+  <img class="card-img-top" src="https://www.nacion.com/resizer/YIuaR4wZOFRDXujKzFlHmKNnWTU=/600x0/center/middle/filters:quality(100)/arc-anglerfish-arc2-prod-gruponacion.s3.amazonaws.com/public/OB4N2BB4H5BN3L6M4VSMUKPRT4.jpg" alt="Card image cap">
+  <div class="card-body">
+    <p class="card-text">Mirardor de Orosi</p>
+  </div>
+</div>
+<br></br>
+<div class="container">
+  <h1>Mirador de Orosi</h1>
+  <br></br>
+  <div class="row">
+    <div class="col-sm-6">
+      <p style="color:cornflowerblue; font-weight: bold;">Ubicación:</p>
+      <p>Orosi, Cartago</p>
+      <p></p>
+    </div>
+    <div class="col-sm-6">
+      <p style="color:cornflowerblue; font-weight: bold;">Descripción:</p>
+      <p>El mirador de Orosí se encuentra a tan solo 5 km del centro de Orosí. Este bello paraje natural ofrece una hermosa vista del valle y el río Grande. </p>
+    </div>
+  </div>
+</div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+<br></br>
+
+
+<!-- Button tercer modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter5">
+ Ver información
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter5" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Información sobre sitio</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        
+      <div class="card" style="width: 18rem; margin:auto;">
+  <img class="card-img-top" src="http://www.cartagohoy.com/wp-content/uploads/2019/01/7824126314_b37b2074a6_b.jpg" alt="Card image cap">
+  <div class="card-body">
+    <p class="card-text">Parque La Laguna Doña Ana</p>
+  </div>
+</div>
+<br></br>
+<div class="container">
+  <h1>Parque La Laguna Doña Ana</h1>
+  <br></br>
+  <div class="row">
+    <div class="col-sm-6">
+      <p style="color:cornflowerblue; font-weight: bold;">Ubicación:</p>
+      <p>Orosi, Cartago</p>
+      <p></p>
+    </div>
+    <div class="col-sm-6">
+      <p style="color:cornflowerblue; font-weight: bold;">Descripción:</p>
+      <p>La Laguna de Doña Ana, es muy visitado tanto por adultos como por niños quienes tienen entrada gratuita. Igualmente es punto de recreo para instituciones educativas y de bien social.</p>
+    </div>
+  </div>
+</div>
+
+<div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
 
 </section>
 <br/><br/><br/>       
