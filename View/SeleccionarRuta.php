@@ -81,18 +81,17 @@
 <form class="form-inline">
   <label class="my-1 mr-2" for="inlineFormCustomSelectPref" style="font-size: initial; font-weight: bold;">Distancia:</label>
   <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" style="font-size: initial;">
-    <option selected style="font-size: initial;"></option>
     <option value="corta" style="font-size: initial;">Corta</option>
     <option value="media" style="font-size: initial;">Media</option>
     <option value="larga" style="font-size: initial;">Larga</option>
   </select>
   <label class="my-1 mr-2" for="inlineFormCustomSelectPref" style="font-size: initial; font-weight: bold;">Tiempo:</label>
   <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" style="font-size: initial;">
-    <option selected></option>
     <option value="1" style="font-size: initial;">Moderado</option>
     <option value="2" style="font-size: initial;">Medio</option>
     <option value="3" style="font-size: initial;">Alto</option>
   </select>
+  <br></br>
   <a class="btn btn-info" href="?seleccionarRuta" style="margin: auto;">Filtrar</a>
 </form>
 
@@ -138,8 +137,8 @@ Iglesia de Orosi
 
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal fade bd-example-modal-lg" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLongTitle">Información sobre sitio</h5>
@@ -150,7 +149,7 @@ Iglesia de Orosi
       <div class="modal-body">
         
         
-      <div class="card" style="width: 18rem; margin:auto;">
+      <div class="card" style="width: 50%; margin:auto;">
   <img class="card-img-top" src="http://www.cartagohoy.com/wp-content/uploads/2019/01/7824126314_b37b2074a6_b.jpg" alt="Card image cap">
   <div class="card-body">
     <p class="card-text">Parque La Laguna Doña Ana</p>
@@ -186,8 +185,8 @@ Iglesia de Orosi
 
 
 <!-- Modal jadin -->
-<div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal fade bd-example-modal-lg" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLongTitle">Información sobre sitio</h5>
@@ -198,7 +197,7 @@ Iglesia de Orosi
       <div class="modal-body">
         
         
-      <div class="card" style="width: 18rem; margin:auto;">
+      <div class="card" style="width: 50%; margin:auto;">
   <img class="card-img-top" src="https://images.visitarcostarica.com/jardin-botanico-lankester-costa-rica.jpg" alt="Card image cap">
   <div class="card-body">
     <p class="card-text">Jardín Botánico Lankester</p>
@@ -236,8 +235,8 @@ Iglesia de Orosi
 
 
 <!-- Modal mirador -->
-<div class="modal fade" id="exampleModalCenter3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal fade bd-example-modal-lg" id="exampleModalCenter3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLongTitle">Información sobre sitio</h5>
@@ -248,7 +247,7 @@ Iglesia de Orosi
       <div class="modal-body">
         
         
-      <div class="card" style="width: 18rem; margin:auto;">
+      <div class="card" style="width: 50%; margin:auto;">
   <img class="card-img-top" src="https://www.nacion.com/resizer/YIuaR4wZOFRDXujKzFlHmKNnWTU=/600x0/center/middle/filters:quality(100)/arc-anglerfish-arc2-prod-gruponacion.s3.amazonaws.com/public/OB4N2BB4H5BN3L6M4VSMUKPRT4.jpg" alt="Card image cap">
   <div class="card-body">
     <p class="card-text">Mirardor de Orosi</p>
@@ -286,8 +285,8 @@ Iglesia de Orosi
 
 
 <!-- Modal iglesia -->
-<div class="modal fade" id="exampleModalCenter4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal fade bd-example-modal-lg" id="exampleModalCenter4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLongTitle">Información sobre sitio</h5>
@@ -298,7 +297,7 @@ Iglesia de Orosi
       <div class="modal-body">
         
         
-      <div class="card" style="width: 18rem; margin:auto;">
+      <div class="card" style="width: 50%; margin:auto;">
   <img class="card-img-top" src="https://travelcostarica.cr/wp-content/uploads/2017/11/Iglesia-Colonial-del-Valle-de-Orosi-Cartago.png" alt="Card image cap">
   <div class="card-body">
     <p class="card-text">Iglesia Colonial del Valle de Orosi</p>
@@ -394,9 +393,9 @@ var directionsService = new google.maps.DirectionsService;
       });
       directionsDisplay.setMap(map);
       latitud=9.818617;
-longitud=-83.858258;
+      longitud=-83.858258;
      calculateAndDisplayRoute(directionsService, directionsDisplay);
-  sitios.push({"id_sitio":"1","nombre":"Hotel maria ","provincia":"Alajuela ","latitud":"-83.858258","longitud":"9.818617","url_video":"NULL","url_imagen":"NULL","calificacion":"3","descripcion":"NULL","duracion":"Corto "});
+     sitios.push({"id_sitio":"1","nombre":"Hotel maria ","provincia":"Alajuela ","latitud":"-83.858258","longitud":"9.818617","url_video":"NULL","url_imagen":"NULL","calificacion":"3","descripcion":"NULL","duracion":"Corto "});
 
   $("#exampleModalCenter3").modal('hide');//ocultamos el modal
   $('body').removeClass('modal-open');//eliminamos la clase del body para poder hacer scroll
