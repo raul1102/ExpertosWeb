@@ -41,7 +41,7 @@
             <br><br>
                 <div id="map"></div>
                 <br><br>
-                <button class="btn btn-info">Seleccionar Ruta</button>
+                <a class="btn btn-info" href="?seleccionarRuta">Seleccionar Ruta</a>
             </div>
         </div>
 
