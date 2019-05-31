@@ -2,7 +2,7 @@
 <head>
     <meta charset="utf-8"/>
     <title>MiRutaCR</title>
-    <meta name="description" content="Tarea 1 - Sistemas expertos para la administración" />
+    <meta name="description" content="Modificar" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="shortcut icon" type="image/x-icon" href="view/img/icono.ico" />
     <link rel="stylesheet" type="text/css" href="View/css/styles.css" />
@@ -30,18 +30,45 @@
 <br><br><br>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+<div class="container">
+<div class="col-md-4">
+ <form class="navbar-form" role="search">
+    <div class="input-group add-on">
+      <input class="form-control" placeholder="Search" name="srch-term" id="srch-term" type="text">
+      <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+      <div class="input-group-btn">
+        <button class="btn btn-info" type="button">Buscar</button>
+      </div>
+    </div>
+  </form>
+  </div>
+</div>
+<br><br><br>
+<div class="container">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Descripción</th>
+      <th scope="col">Latitud</th>
+      <th scope="col">Longitud</th>
+      <th scope="col">Imagen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Iglesia de Orosi</td>
+      <td>Iglesia Patrimonio natural de la humanidad</td>
+      <td>9.23465</td>
+      <td>-82.145</td>
+      <td><img src="View/images/FONDO2.png" class="card-img-top" alt="..." style="height: 50px; width: 80px;"></td>
+      <td><a class="btn btn-info" href="?modificarSitio">Modificar</a></td>      
+    </tr>   
+  </tbody>
+</table>
+</div>
 
 </section>
 

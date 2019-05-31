@@ -2,7 +2,7 @@
 <head>
     <meta charset="utf-8"/>
     <title>MiRutaCR</title>
-    <meta name="description" content="Tarea 1 - Sistemas expertos para la administración" />
+    <meta name="description" content="Deshabilitar" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="shortcut icon" type="image/x-icon" href="view/img/icono.ico" />
     <link rel="stylesheet" type="text/css" href="View/css/styles.css" />
@@ -59,8 +59,8 @@
       <th scope="row">1</th>
       <td>Hotel Rio Perlas</td>
       <td>Hotel ubicado carretera Orosi, donde puede disfrutar e un tiempo con mucha comodidad y disfrutar de un entorno natural</td>
-      <td>11' 36''</td>
-      <td>96' 20''</td>
+      <td>9.25548</td>
+      <td>-82.16549</td>
       <td><button class="btn btn-info" onclick='alert("Sitio Habilitado")'>Habilitar</button></td>
       <td><button class="btn btn-danger" onclick='alert("Sitio Deshabilitado")'>Deshabilitar</button></td>
     </tr>
@@ -68,8 +68,8 @@
       <th scope="row">2</th>
       <td>Iglesia de Orosi</td>
       <td>Iglesia Patrimonio natural de la humanidad</td>
-      <td>11' 32''</td>
-      <td>85' 36''</td>
+      <td>8.20540</td>
+      <td>-82.14546</td>
       <td><button class="btn btn-info" onclick='alert("Sitio Habilitado")'>Habilitar</button></td>
       <td><button class="btn btn-danger" onclick='alert("Sitio Deshabilitado")'>Deshabilitar</button></td>
     </tr>
@@ -77,8 +77,8 @@
       <th scope="row">3</th>
       <td>Volcán Irazú</td>
       <td>Volcán más alto del territorio nacional</td>
-      <td>12' 36''</td>
-      <td>79' 13''</td>
+      <td>9.25001</td>
+      <td>-82.30008'</td>
       <td><button class="btn btn-info" onclick='alert("Sitio Habilitado")'>Habilitar</button></td>
       <td><button class="btn btn-danger" onclick='alert("Sitio Deshabilitado")'>Deshabilitar</button></td>
     </tr>

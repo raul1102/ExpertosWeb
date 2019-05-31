@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8"/>
         <title>MiRutaCR</title>
-        <meta name="description" content="Tarea 1 - Sistemas expertos para la administración" />
+        <meta name="description" content="MiRutaCR" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <link rel="shortcut icon" type="image/x-icon" href="view/img/icono.ico" />
         <link rel="stylesheet" type="text/css" href="view/css/estilos.css" />

@@ -2,7 +2,7 @@
 <head>
     <meta charset="utf-8"/>
     <title>MiRutaCR</title>
-    <meta name="description" content="Insertar" />
+    <meta name="description" content="Modificar Sitio" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="shortcut icon" type="image/x-icon" href="view/img/icono.ico" />
     <link rel="stylesheet" type="text/css" href="View/css/styles.css" />
@@ -26,7 +26,7 @@
 </header>
 <section style="text-align: center;">
 
-<label id="tituloAdministrador">Insertar Sitio</label>
+<label id="tituloAdministrador">Modificar Sitio</label>
 <br><br><br>
 
 <div class="container">
@@ -38,49 +38,50 @@
   <div class="form-group row">
     <label for="nombreSitio" class="col-sm-3 col-form-label">Nombre: </label>
     <div class="col-md-8">
-      <input type="text" class="form-control" id="nombreSitio" placeholder="Ingrese el nombre del sitio">
+      <input type="text" class="form-control" id="nombreSitio" value="Iglesia de Orosi">
     </div>
   </div>
 
   <div class="form-group row">
     <label for="nombreSitio" class="col-sm-3 col-form-label">Descripción: </label>
     <div class="col-md-8">
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">Iglesia Patrimonio natural de la humanidad</textarea>
     </div>
   </div> 
 
   <div class="form-group row">
     <label for="latitud" class="col-sm-3 col-form-label"> Latitud: </label>
     <div class="col-md-8">
-      <input type="text" class="form-control" id="latitud" placeholder="Latitud">
+      <input type="text" class="form-control" id="latitud" value="9.23465">
     </div>
   </div>
 
   <div class="form-group row">
     <label for="longitud" class="col-sm-3 col-form-label">Longitud: </label>
     <div class="col-md-8">
-      <input type="text" class="form-control" id="longitud" placeholder="Longitud">
+      <input type="text" class="form-control" id="longitud" value="-82.1454687">
     </div>
   </div>
   
   <div class="form-group row">
     <label for="url" class="col-sm-3 col-form-label">URL del Sitio: </label>
     <div class="col-md-8">
-      <input type="url" class="form-control" id="url" placeholder="https://www.MiRutaCR.com">
+      <input type="url" class="form-control" id="url" value="https://www.MiRutaCR.com">
     </div>
   </div>
 
   <div class="form-group row">
     <label for="imagen" class="col-sm-3 col-form-label">Imagen: </label>
     <div class="col-md-8">
-    <a style="color: white;"><i class="fas fa-upload"></i></a> 
+    <img src="View/images/FONDO2.png" class="card-img-top" alt="..." style="height: 50px; width: 80px;">
+    <br><br>
     <input type="file" value="Imagen">          
     </div>
   </div>
   <br>
   <div class="form-group row">    
     <div class="col-md-12">
-     <a class="btn btn-info" onclick='alert("Sitio Insertado")' href="?insertar">Insertar</a>
+     <a class="btn btn-info" onclick='alert("Sitio Modificado")' href="?modificar">Modificar</a>
     </div>
   </div>
 
