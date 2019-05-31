@@ -70,6 +70,18 @@
     </div>
   </div>
 
+   <div class="form-group row">
+   <label for="url" class="col-sm-3 col-form-label">Tiempo: </label>
+   <div class="col-md-8">
+   <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" style="font-size: initial;">
+    <option selected></option>
+    <option value="1" style="font-size: initial;">Moderado</option>
+    <option value="2" style="font-size: initial;">Medio</option>
+    <option value="3" style="font-size: initial;">Alto</option>
+  </select>
+  </div>
+  </div>
+
   <div class="form-group row">
     <label for="imagen" class="col-sm-3 col-form-label">Imagen: </label>
     <div class="col-md-8">

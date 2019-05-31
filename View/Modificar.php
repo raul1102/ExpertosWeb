@@ -53,7 +53,9 @@
       <th scope="col">Descripción</th>
       <th scope="col">Latitud</th>
       <th scope="col">Longitud</th>
-      <th scope="col">Imagen</th>
+      <th scope="col">URL</th>
+      <th scope="col">Tiempo</th>
+      <th scope="col">Imagen</th>      
     </tr>
   </thead>
   <tbody>
@@ -63,7 +65,9 @@
       <td>Iglesia Patrimonio natural de la humanidad</td>
       <td>9.23465</td>
       <td>-82.145</td>
-      <td><img src="View/images/FONDO2.png" class="card-img-top" alt="..." style="height: 50px; width: 80px;"></td>
+      <td>https://www.MiRutaCR.com</td>      
+      <td>Moderado</td>
+      <td><img src="View/images/FONDO2.png" class="card-img-top" alt="..." style="height: 50px; width: 80px;"></td>      
       <td><a class="btn btn-info" href="?modificarSitio">Modificar</a></td>      
     </tr>   
   </tbody>
