@@ -46,6 +46,12 @@ class DefaultModel{
     else if(isset($_GET['seleccionarRuta'])) {
       
       include('View/seleccionarRuta.php');
+      
+    
+    } 
+    else if(isset($_GET['filtrarSitios'])) {
+      
+      include('View/FiltrarSitios.php');
 
 } 
     else{

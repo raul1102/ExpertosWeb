@@ -75,6 +75,29 @@
 
 <br><br>
 <div class="grid-container">
+
+<div class="item1" style="width: 40%; margin: auto;">
+
+<form class="form-inline">
+  <label class="my-1 mr-2" for="inlineFormCustomSelectPref" style="font-size: initial; font-weight: bold;">Distancia:</label>
+  <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" style="font-size: initial;">
+    <option selected style="font-size: initial;"></option>
+    <option value="corta" style="font-size: initial;">Corta</option>
+    <option value="media" style="font-size: initial;">Media</option>
+    <option value="larga" style="font-size: initial;">Larga</option>
+  </select>
+  <label class="my-1 mr-2" for="inlineFormCustomSelectPref" style="font-size: initial; font-weight: bold;">Tiempo:</label>
+  <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" style="font-size: initial;">
+    <option selected></option>
+    <option value="1" style="font-size: initial;">Moderado</option>
+    <option value="2" style="font-size: initial;">Medio</option>
+    <option value="3" style="font-size: initial;">Alto</option>
+  </select>
+  <button  onClick="window.location.href='seleccionarRuta.php'" type="submit" class="btn btn-primary my-1" style="margin: auto;">Filtrar</button>
+</form>
+
+</div>
+
     <div class="item3">
       
 
