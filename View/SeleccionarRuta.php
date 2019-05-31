@@ -5,7 +5,7 @@
   <style>
     #map {
       height: 500px;
-    width: 550px;
+    width: 500px;
     margin-top: 50px;
       }
 
