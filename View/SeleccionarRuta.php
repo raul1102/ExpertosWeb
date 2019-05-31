@@ -93,7 +93,7 @@
     <option value="2" style="font-size: initial;">Medio</option>
     <option value="3" style="font-size: initial;">Alto</option>
   </select>
-  <button  onClick="window.location.href='seleccionarRuta.php'" type="submit" class="btn btn-primary my-1" style="margin: auto;">Filtrar</button>
+  <a class="btn btn-info" href="?seleccionarRuta" style="margin: auto;">Filtrar</a>
 </form>
 
 </div>
@@ -118,16 +118,16 @@
 
        <div class="grid-containerA">
        <br></br>
-       <button id="boton1" type="button" class="btn btn-primary"  data-toggle="modal" data-target="#exampleModalCenter1">
+       <button id="boton1" type="button" class="btn btn-primary"  data-toggle="modal" data-target="#exampleModalCenter1" style="background-color: #17a2b8; border-color: #17a2b8;">
        Parque la laguna Doña Ana
 </button><br></br>
-<button  id="boton2" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">
+<button  id="boton2" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2" style="background-color: #17a2b8; border-color: #17a2b8;">
 Jardin Botanico
 </button><br></br>
-<button id="boton3" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter3">
+<button id="boton3" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter3" style="background-color: #17a2b8; border-color: #17a2b8;">
 Mirador de Orosi
 </button><br></br>
-<button id="boton4" type="button" class="btn btn-primary" data-toggle="modal"  data-target="#exampleModalCenter4">
+<button id="boton4" type="button" class="btn btn-primary" data-toggle="modal"  data-target="#exampleModalCenter4" style="background-color: #17a2b8; border-color: #17a2b8;">
 Iglesia de Orosi
 </button>
      
@@ -162,12 +162,12 @@ Iglesia de Orosi
   <br></br>
   <div class="row">
     <div class="col-sm-6">
-      <p style="color:cornflowerblue; font-weight: bold;">Ubicación:</p>
+      <p style="color: #17a2b8; font-weight: bold;">Ubicación:</p>
       <p>Orosi, Cartago</p>
       <p></p>
     </div>
     <div class="col-sm-6">
-      <p style="color:cornflowerblue; font-weight: bold;">Descripción:</p>
+      <p style="color: #17a2b8; font-weight: bold;">Descripción:</p>
       <p>La Laguna de Doña Ana, es muy visitado tanto por adultos como por niños quienes tienen entrada gratuita. Igualmente es punto de recreo para instituciones educativas y de bien social.</p>
     </div>
   </div>
@@ -175,7 +175,7 @@ Iglesia de Orosi
 
 <div class="modal-footer">
 <button type="button"  class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-<button type="button" onClick="funcion1()" class="btn btn-primary">Agregar a la Ruta</button>
+<button type="button" onClick="funcion1()" class="btn btn-primary" style="background-color: #17a2b8; border-color: #17a2b8;">Agregar a la Ruta</button>
  </div>
       </div>
     </div>
@@ -210,12 +210,12 @@ Iglesia de Orosi
   <br></br>
   <div class="row">
     <div class="col-sm-6">
-      <p style="color:cornflowerblue; font-weight: bold;">Ubicación:</p>
+      <p style="color: #17a2b8; font-weight: bold;">Ubicación:</p>
       <p>Paraíso, Cartago</p>
       <p></p>
     </div>
     <div class="col-sm-6">
-      <p style="color:cornflowerblue; font-weight: bold;">Descripción:</p>
+      <p style="color: #17a2b8; font-weight: bold;">Descripción:</p>
       <p>Este jardín botánico que forma parte de la Universidad de Costa Rica desde el año 1973, se ubica en el cantón de Paraíso, provincia de Cartago a unos 45 minutos en automóvil, de la capital San José de Costa Rica.</p>
     </div>
   </div>
@@ -223,7 +223,7 @@ Iglesia de Orosi
 
 <div class="modal-footer">
 <button type="button"  class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-<button type="button" onClick="funcion2()" class="btn btn-primary">Agregar a la Ruta</button>
+<button type="button" onClick="funcion2()" class="btn btn-primary" style="background-color: #17a2b8; border-color: #17a2b8;">Agregar a la Ruta</button>
  </div>
 
       </div>
@@ -260,12 +260,12 @@ Iglesia de Orosi
   <br></br>
   <div class="row">
     <div class="col-sm-6">
-      <p style="color:cornflowerblue; font-weight: bold;">Ubicación:</p>
+      <p style="color: #17a2b8; font-weight: bold;">Ubicación:</p>
       <p>Orosi, Cartago</p>
       <p></p>
     </div>
     <div class="col-sm-6">
-      <p style="color:cornflowerblue; font-weight: bold;">Descripción:</p>
+      <p style="color: #17a2b8; font-weight: bold;">Descripción:</p>
       <p>El mirador de Orosí se encuentra a tan solo 5 km del centro de Orosí. Este bello paraje natural ofrece una hermosa vista del valle y el río Grande. </p>
     </div>
   </div>
@@ -273,7 +273,7 @@ Iglesia de Orosi
 
 <div class="modal-footer">
 <button type="button"  class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-<button type="button" onClick="funcion3()" class="btn btn-primary">Agregar a la Ruta</button>
+<button type="button" onClick="funcion3()" class="btn btn-primary" style="background-color: #17a2b8; border-color: #17a2b8;">Agregar a la Ruta</button>
  </div>
 
       </div>
@@ -310,12 +310,12 @@ Iglesia de Orosi
   <br></br>
   <div class="row">
     <div class="col-sm-6">
-      <p style="color:cornflowerblue; font-weight: bold;">Ubicación:</p>
+      <p style="color: #17a2b8; font-weight: bold;">Ubicación:</p>
       <p>Orosi, Cartago</p>
       <p></p>
     </div>
     <div class="col-sm-6">
-      <p style="color:cornflowerblue; font-weight: bold;">Descripción:</p>
+      <p style="color: #17a2b8; font-weight: bold;">Descripción:</p>
       <p>Es una de las más antiguas edificaciones del país, que datan de la época de la Colonia española, que persisten hasta la actualidad.</p>
     </div>
   </div>
@@ -323,7 +323,7 @@ Iglesia de Orosi
 
 <div class="modal-footer">
 <button type="button"  class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-<button type="button" onClick="funcion4()" class="btn btn-primary">Agregar a la Ruta</button>
+<button type="button" onClick="funcion4()" class="btn btn-primary" style="background-color: #17a2b8; border-color: #17a2b8;">Agregar a la Ruta</button>
  </div>
 
       </div>
