@@ -352,7 +352,7 @@ function funcion1(){
         });
         directionsDisplay.setMap(map);
         latitud=9.833290;
-longitud=-83.878485;
+        longitud=-83.878485;
        calculateAndDisplayRoute(directionsService, directionsDisplay);
        sitios.push({"id_sitio":"1","nombre":"Hotel maria ","provincia":"Alajuela ","latitud":"-83.878485","longitud":"9.833290","url_video":"NULL","url_imagen":"NULL","calificacion":"3","descripcion":"NULL","duracion":"Corto "});
        
@@ -373,7 +373,7 @@ function funcion2(){
         });
         directionsDisplay.setMap(map);
         latitud=9.839486;
-longitud=-83.890180;
+      longitud=-83.890180;
        calculateAndDisplayRoute(directionsService, directionsDisplay);
    sitios.push({"id_sitio":"1","nombre":"Hotel maria ","provincia":"Alajuela ","latitud":"-83.890180","longitud":"9.839486","url_video":"NULL","url_imagen":"NULL","calificacion":"3","descripcion":"NULL","duracion":"Corto "});
    $("#exampleModalCenter2").modal('hide');//ocultamos el modal
@@ -414,7 +414,7 @@ var directionsService = new google.maps.DirectionsService;
       });
       directionsDisplay.setMap(map);
       latitud=9.798159;
-longitud=-83.855588;
+      longitud=-83.855588;
      calculateAndDisplayRoute(directionsService, directionsDisplay);
  sitios.push({"id_sitio":"1","nombre":"Hotel maria ","provincia":"Alajuela ","latitud":"-83.855588","longitud":"9.798159","url_video":"NULL","url_imagen":"NULL","calificacion":"3","descripcion":"NULL","duracion":"Corto "});
       
