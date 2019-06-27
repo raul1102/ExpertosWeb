@@ -1,3 +1,9 @@
+<?php 
+
+  $con = mysqli_connect("163.178.173.144", "multi-paraiso", "multimedios.rp.2017", "MiRutaCR") or die ("Error en la conexion");
+
+?>
+
 <html lang="es">
 <head>
     <meta charset="utf-8"/>
@@ -26,7 +32,7 @@
 </header>
 <section style="text-align: center;">
 
-<label id="tituloAdministrador">Deshabilitar Sitio</label>
+<label id="tituloAdministrador">Habilitar o Deshabilitar un Sitio</label>
 <br><br><br>
 
 <div class="container">
@@ -44,6 +50,9 @@
 </div>
 <br><br><br>
 <div class="container">
+
+<form method="post" action="?deshabilitar">
+
 <table class="table">
   <thead>
     <tr>
@@ -52,38 +61,78 @@
       <th scope="col">Descripción</th>
       <th scope="col">Latitud</th>
       <th scope="col">Longitud</th>
+      <th scope="col">Estado</th>      
+
+           
     </tr>
   </thead>
+
+<?php
+
+$sql = "SELECT * FROM Destino"; 
+
+$ejecutar = mysqli_query($con, $sql);
+
+$i = 0;
+
+while($fila = mysqli_fetch_array($ejecutar)){
+      $id = $fila['id'];
+      $nombre = $fila['nombre'];
+      $descripcion = $fila['descripcion'];
+      $latitud = $fila['latitud'];
+      $longitud = $fila['longitud'];
+      $urlSitio = $fila['urlSitio'];
+      $tiempo = $fila['tiempo'];
+      $urlVideo = $fila['urlVideo'];
+      $urlImagen = $fila['urlImagen']; 
+      $habilitar = $fila['habilitacion'];
+      
+      $i++;
+?>
+
   <tbody>
     <tr>
-      <th scope="row">1</th>
-      <td>Hotel Rio Perlas</td>
-      <td>Hotel ubicado carretera Orosi, donde puede disfrutar e un tiempo con mucha comodidad y disfrutar de un entorno natural</td>
-      <td>9.25548</td>
-      <td>-82.16549</td>
-      <td><button class="btn btn-info" onclick='alert("Sitio Habilitado")'>Habilitar</button></td>
-      <td><button class="btn btn-danger" onclick='alert("Sitio Deshabilitado")'>Deshabilitar</button></td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Iglesia de Orosi</td>
-      <td>Iglesia Patrimonio natural de la humanidad</td>
-      <td>8.20540</td>
-      <td>-82.14546</td>
-      <td><button class="btn btn-info" onclick='alert("Sitio Habilitado")'>Habilitar</button></td>
-      <td><button class="btn btn-danger" onclick='alert("Sitio Deshabilitado")'>Deshabilitar</button></td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Volcán Irazú</td>
-      <td>Volcán más alto del territorio nacional</td>
-      <td>9.25001</td>
-      <td>-82.30008'</td>
-      <td><button class="btn btn-info" onclick='alert("Sitio Habilitado")'>Habilitar</button></td>
-      <td><button class="btn btn-danger" onclick='alert("Sitio Deshabilitado")'>Deshabilitar</button></td>
-    </tr>
+      <th scope="row" name="idTabla" id="idTabla"><?php echo $id; ?></th>
+      <td><?php echo $nombre; ?></td>
+      <td><?php echo $descripcion; ?></td>
+      <td><?php echo $latitud; ?></td>
+      <td><?php echo $longitud; ?></td>
+      <td><?php 
+      
+      if($habilitar == 0){
+        echo "Sitio Deshabilitado";
+      } else {
+        echo "Sitio Habilitado";
+      }      
+       ?></td>            
+      <td><a type="submit" name="aceptar" href="?confirmacionHabilitar=<?php echo $id; ?>" class="btn btn-success">Habilitar</a></td>                
+      <td><a type="submit" name="submit" href="?confirmacionDeshabilitar=<?php echo $id; ?>" class="btn btn-danger">Deshabilitar</a></td> 
+            
+    </tr>   
   </tbody>
+
+
+<?php } ?>
+
+
 </table>
+
+</form>
+
+<?php 
+  if(isset($_GET['confirmacionDeshabilitar'])){
+      include("?confirmacionDeshabilitar");
+  }
+
+?>
+
+<?php 
+  if(isset($_GET['confirmacionHabilitar'])){
+      include("?confirmacionHabilitar");
+  }
+
+?>
+
 </div>
 
 </section>

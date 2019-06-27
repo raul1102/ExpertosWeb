@@ -45,10 +45,18 @@ class DefaultModel{
     } 
     else if(isset($_GET['seleccionarRuta'])) {
       
-      include('View/seleccionarRuta.php');
+      include('View/seleccionarRuta.php');      
+    
+    } else if(isset($_GET['confirmacionDeshabilitar'])) {
       
+      include('View/confirmacionDeshabilitar.php');      
+    
+    } else if(isset($_GET['confirmacionHabilitar'])) {
+      
+      include('View/confirmacionHabilitar.php');      
     
     } 
+
     else if(isset($_GET['filtrarSitios'])) {
       
       include('View/FiltrarSitios.php');

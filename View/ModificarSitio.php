@@ -1,3 +1,32 @@
+<?php 
+
+  $con = mysqli_connect("163.178.173.144", "multi-paraiso", "multimedios.rp.2017", "MiRutaCR") or die ("Error en la conexion");
+
+?>
+
+<?php
+  if(isset($_GET['modificarSitio'])){
+      $editar_id = $_GET['modificarSitio'];
+
+
+      $sql = "SELECT * FROM Destino WHERE id='$editar_id'";
+      $ejecutar = mysqli_query($con, $sql);
+
+      $fila = mysqli_fetch_array($ejecutar);
+
+      $nombre = $fila['nombre'];
+      $descripcion = $fila['descripcion'];
+      $latitud = $fila['latitud'];
+      $longitud = $fila['longitud'];
+      $urlSitio = $fila['urlSitio'];
+      $tiempo = $fila['tiempo'];
+      $urlVideo = $fila['urlVideo'];
+      $urlImagen = $fila['urlImagen']; 
+  }
+
+?>
+
+
 <html lang="es">
 <head>
     <meta charset="utf-8"/>
@@ -33,48 +62,57 @@
 <div class="row">
 <div class="col-md-3"></div>
 <div class="col-md-6">
-<form>
+<form method="post" action="">
 
   <div class="form-group row">
     <label for="nombreSitio" class="col-sm-3 col-form-label">Nombre: </label>
     <div class="col-md-8">
-      <input type="text" class="form-control" id="nombreSitio" value="Iglesia de Orosi">
+      <input type="text" class="form-control" name="nombre" id="nombre" value="<?php echo $nombre; ?>">
     </div>
   </div>
 
   <div class="form-group row">
     <label for="nombreSitio" class="col-sm-3 col-form-label">Descripción: </label>
     <div class="col-md-8">
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">Iglesia Patrimonio natural de la humanidad</textarea>
+    <textarea class="form-control" name="descripcion" id="descripcion" rows="3"><?php echo $descripcion; ?></textarea>
     </div>
   </div> 
 
   <div class="form-group row">
     <label for="latitud" class="col-sm-3 col-form-label"> Latitud: </label>
     <div class="col-md-8">
-      <input type="text" class="form-control" id="latitud" value="9.23465">
+      <input type="text" class="form-control" name="latitud" id="latitud" value="<?php echo $latitud; ?>">
     </div>
   </div>
 
   <div class="form-group row">
     <label for="longitud" class="col-sm-3 col-form-label">Longitud: </label>
     <div class="col-md-8">
-      <input type="text" class="form-control" id="longitud" value="-82.1454687">
+      <input type="text" class="form-control" name="longitud" id="longituf" value="<?php echo $longitud; ?>">
     </div>
   </div>
   
   <div class="form-group row">
-    <label for="url" class="col-sm-3 col-form-label">URL del Sitio: </label>
+    <label for="urlSitio" class="col-sm-3 col-form-label">URL del Sitio: </label>
     <div class="col-md-8">
-      <input type="url" class="form-control" id="url" value="https://www.MiRutaCR.com">
+      <input type="url" class="form-control" name="urlSitio" id="urlSitio" value="<?php echo $urlSitio; ?>">
     </div>
   </div>
 
-  <div class="form-group row">
+   <div class="form-group row">
    <label for="url" class="col-sm-3 col-form-label">Tiempo: </label>
    <div class="col-md-8">
-   <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" style="font-size: initial;">
-    <option selected>Moderado</option>
+   <select class="custom-select my-1 mr-sm-2" name="tiempo" id="tiempo" style="font-size: initial;">
+    <option selected><?php 
+    if($tiempo == 1){
+      echo "Moderado";
+    }elseif($tiempo == 2){
+      echo "Medio";
+    }else{
+      echo "Alto";
+    }    
+    ?></option>
+    <option value="1" style="font-size: initial;">Moderado</option>
     <option value="2" style="font-size: initial;">Medio</option>
     <option value="3" style="font-size: initial;">Alto</option>
   </select>
@@ -82,28 +120,60 @@
   </div>
 
   <div class="form-group row">
-    <label for="imagen" class="col-sm-3 col-form-label">Imagen: </label>
+    <label for="urlVideo" class="col-sm-3 col-form-label">URL del Video: </label>
     <div class="col-md-8">
-    <img src="View/images/FONDO2.png" class="card-img-top" alt="..." style="height: 50px; width: 80px;">
-    <br><br>
-    <input type="file" value="Imagen">          
-    </div>
-  </div>
-  <br>
-  <div class="form-group row">    
-    <div class="col-md-12">
-     <a class="btn btn-info" onclick='alert("Sitio Modificado")' href="?modificar">Modificar</a>
+      <input type="url" class="form-control" name="urlVideo" id="urlVideo" value="<?php echo $urlVideo; ?>">
     </div>
   </div>
 
-</form>
+  <div class="form-group row">
+    <label for="url" class="col-sm-3 col-form-label">URL de la Imagen: </label>
+    <div class="col-md-8">
+      <input type="urlImagen" class="form-control" name="urlImagen" id="urlImagen" value="<?php echo $urlImagen; ?>">
+    </div>
+  </div>
+
+  <br>
+  <div class="form-group row">    
+    <div class="col-md-12">
+     <input type="submit" name="submit" value="Actualizar" class="btn btn-info"/>
+    </div>
+  </div>
+
+
 </div>
 </div>
 </div>
 </section>
 
-  <br/><br/><br/>       
-</form>
+<br/><br/><br/> 
+</form> 
+
+<?php 
+
+if(isset($_POST['submit'])){
+
+  $id_registro = $_GET['modificarSitio'];
+  $actualizar_nombre = $_POST['nombre'];
+  $actualizar_descripcion = $_POST['descripcion'];
+  $actualizar_latitud = $_POST['latitud'];
+  $actualizar_longitud = $_POST['longitud'];
+  $actualizar_urlSitio = $_POST['urlSitio'];
+  $actualizar_tiempo = $_POST['tiempo'];
+  $actualizar_urlVideo = $_POST['urlVideo'];
+  $actualizar_urlImagen = $_POST['urlImagen']; 
+
+  $consulta = "UPDATE MiRutaCR.Destino SET nombre='$actualizar_nombre', descripcion='$actualizar_descripcion', latitud='$actualizar_latitud', longitud='$actualizar_longitud', urlSitio='$actualizar_urlSitio', tiempo='$actualizar_tiempo', urlVideo='$actualizar_urlVideo', urlImagen='$actualizar_urlImagen' WHERE id='$id_registro'";
+
+  $ejecutarConsulta = mysqli_query($con, $consulta);
+
+    if($ejecutarConsulta){      
+      echo"<script>window.open('?modificar', '_self')</script>";
+    }
+
+  }
+?>   
+
 <?php 
     
 ?>

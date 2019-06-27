@@ -1,3 +1,9 @@
+<?php 
+
+  $con = mysqli_connect("163.178.173.144", "multi-paraiso", "multimedios.rp.2017", "MiRutaCR") or die ("Error en la conexion");
+
+?>
+
 <html lang="es">
 <head>
     <meta charset="utf-8"/>
@@ -54,33 +60,67 @@
       <th scope="col">Latitud</th>
       <th scope="col">Longitud</th>
       <th scope="col">URL</th>
-      <th scope="col">Tiempo</th>
-      <th scope="col">Imagen</th>      
+      <th scope="col">Tiempo</th>      
+           
     </tr>
   </thead>
+
+<?php
+
+$sql = "SELECT * FROM Destino"; 
+
+$ejecutar = mysqli_query($con, $sql);
+
+$i = 0;
+
+while($fila = mysqli_fetch_array($ejecutar)){
+      $id = $fila['id'];
+      $nombre = $fila['nombre'];
+      $descripcion = $fila['descripcion'];
+      $latitud = $fila['latitud'];
+      $longitud = $fila['longitud'];
+      $urlSitio = $fila['urlSitio'];
+      $tiempo = $fila['tiempo'];
+      $urlVideo = $fila['urlVideo'];
+      $urlImagen = $fila['urlImagen']; 
+      
+      $i++;
+?>
+
   <tbody>
     <tr>
-      <th scope="row">1</th>
-      <td>Iglesia de Orosi</td>
-      <td>Iglesia Patrimonio natural de la humanidad</td>
-      <td>9.23465</td>
-      <td>-82.145</td>
-      <td>https://www.MiRutaCR.com</td>      
-      <td>Moderado</td>
-      <td><img src="View/images/FONDO2.png" class="card-img-top" alt="..." style="height: 50px; width: 80px;"></td>      
-      <td><a class="btn btn-info" href="?modificarSitio">Modificar</a></td>      
+      <th scope="row"><?php echo $id; ?></th>
+      <td><?php echo $nombre; ?></td>
+      <td><?php echo $descripcion; ?></td>
+      <td><?php echo $latitud; ?></td>
+      <td><?php echo $longitud; ?></td>
+      <td><?php echo $urlSitio; ?></td>      
+      <td><?php echo $tiempo; ?></td>                
+      <td><a class="btn btn-info" href="?modificarSitio=<?php echo $id; ?>">Modificar</a></td>      
     </tr>   
   </tbody>
+
+
+<?php } ?>
+
+
 </table>
+
+<?php 
+  if(isset($_GET['modificarSitio'])){
+      include("?modificarSitio");
+  }
+
+?>
+
+
 </div>
 
 </section>
 
   <br/><br/><br/>       
 </form>
-<?php 
-    
-?>
+
 <?php    
 //footer
 include_once 'Footer.php';

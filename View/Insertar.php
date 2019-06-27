@@ -1,3 +1,9 @@
+<?php 
+
+  $con = mysqli_connect("163.178.173.144", "multi-paraiso", "multimedios.rp.2017", "MiRutaCR") or die ("Error en la conexion");
+
+?>
+
 <html lang="es">
 <head>
     <meta charset="utf-8"/>
@@ -21,10 +27,13 @@
 <header>
 
 <?php include('Administrador.php'); ?> 
+
 <br><br>
 
 </header>
 <section style="text-align: center;">
+
+
 
 <label id="tituloAdministrador">Insertar Sitio</label>
 <br><br><br>
@@ -33,53 +42,68 @@
 <div class="row">
 <div class="col-md-3"></div>
 <div class="col-md-6">
-<form>
+
+<form method="post" action="?insertar">
 
   <div class="form-group row">
     <label for="nombreSitio" class="col-sm-3 col-form-label">Nombre: </label>
     <div class="col-md-8">
-      <input type="text" class="form-control" id="nombreSitio" placeholder="Ingrese el nombre del sitio">
+      <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ingrese el nombre del sitio">
     </div>
   </div>
 
   <div class="form-group row">
     <label for="nombreSitio" class="col-sm-3 col-form-label">Descripción: </label>
     <div class="col-md-8">
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <textarea class="form-control" name="descripcion" id="descripcion" rows="3"></textarea>
     </div>
   </div> 
 
   <div class="form-group row">
     <label for="latitud" class="col-sm-3 col-form-label"> Latitud: </label>
     <div class="col-md-8">
-      <input type="text" class="form-control" id="latitud" placeholder="Latitud">
+      <input type="text" class="form-control" name="latitud" id="latitud" placeholder="Latitud">
     </div>
   </div>
 
   <div class="form-group row">
     <label for="longitud" class="col-sm-3 col-form-label">Longitud: </label>
     <div class="col-md-8">
-      <input type="text" class="form-control" id="longitud" placeholder="Longitud">
+      <input type="text" class="form-control" name="longitud" id="longituf" placeholder="Longitud">
     </div>
   </div>
   
   <div class="form-group row">
-    <label for="url" class="col-sm-3 col-form-label">URL del Sitio: </label>
+    <label for="urlSitio" class="col-sm-3 col-form-label">URL del Sitio: </label>
     <div class="col-md-8">
-      <input type="url" class="form-control" id="url" placeholder="https://www.MiRutaCR.com">
+      <input type="url" class="form-control" name="urlSitio" id="urlSitio" placeholder="https://www.MiRutaCR.com">
     </div>
   </div>
 
    <div class="form-group row">
    <label for="url" class="col-sm-3 col-form-label">Tiempo: </label>
    <div class="col-md-8">
-   <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" style="font-size: initial;">
+   <select class="custom-select my-1 mr-sm-2" name="tiempo" id="tiempo" style="font-size: initial;">
     <option selected></option>
     <option value="1" style="font-size: initial;">Moderado</option>
     <option value="2" style="font-size: initial;">Medio</option>
     <option value="3" style="font-size: initial;">Alto</option>
   </select>
   </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="urlVideo" class="col-sm-3 col-form-label">URL del Video: </label>
+    <div class="col-md-8">
+      <input type="url" class="form-control" name="urlVideo" id="urlVideo" placeholder="https://www.MiRutaCR.com">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="url" class="col-sm-3 col-form-label">URL de la Imagen: </label>
+    <div class="col-md-8">
+      <input type="urlImagen" class="form-control" name="urlImagen" id="urlImagen" placeholder="https://www.MiRutaCR.com">
+    </div>
   </div>
 
   <div class="form-group row">
@@ -92,7 +116,7 @@
   <br>
   <div class="form-group row">    
     <div class="col-md-12">
-     <a class="btn btn-info" onclick='alert("Sitio Insertado")' href="?insertar">Insertar</a>
+     <input type="submit" name="submit" value="Insertar" class="btn btn-info">
     </div>
   </div>
 
@@ -104,6 +128,30 @@
 
   <br/><br/><br/>       
 </form>
+
+<?php
+
+if(isset($_POST['submit'])){
+    
+      $nombre = $_POST['nombre'];
+      $descripcion = $_POST['descripcion'];
+      $latitud = $_POST['latitud'];
+      $longitud = $_POST['longitud'];
+      $urlSitio = $_POST['urlSitio'];
+      $tiempo = $_POST['tiempo'];
+      $urlVideo = $_POST['urlVideo'];
+      $urlImagen = $_POST['urlImagen'];   
+
+    $sql = "INSERT INTO Destino (nombre, descripcion, latitud, longitud, urlSitio, tiempo, urlVideo, urlImagen) 
+    values ('$nombre', '$descripcion', '$latitud', '$longitud', '$urlSitio', '$tiempo', '$urlVideo', '$urlImagen')"; 
+    
+    $ejecutar = mysqli_query($con, $sql);
+
+}
+?>
+
+
+
 <?php 
     
 ?>
