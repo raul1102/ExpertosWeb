@@ -39,6 +39,9 @@
       <li class="nav-item">
         <a class="nav-link" href="?deshabilitar">Deshabilitar</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="?vecino">Agregar vecinos </a>
+      </li>
     </ul>
     <span class="navbar-text">
      

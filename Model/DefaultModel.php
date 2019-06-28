@@ -62,6 +62,11 @@ class DefaultModel{
       include('View/FiltrarSitios.php');
 
 } 
+else if(isset($_GET['vecino'])) {
+      
+  include('View/vecino.php');
+
+} 
     else{
 
       include_once('View/indexView.php');
