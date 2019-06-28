@@ -1,3 +1,8 @@
+<?php 
+
+  $con = mysqli_connect("163.178.173.144", "multi-paraiso", "multimedios.rp.2017", "MiRutaCR") or die ("Error en la conexion");
+
+?>
 <html lang="es">
 <head>
 
@@ -78,43 +83,98 @@
 
 <div class="item1" style="width: 40%; margin: auto;">
 
-<form class="form-inline">
-  <label class="my-1 mr-2" for="inlineFormCustomSelectPref" style="font-size: initial; font-weight: bold;">Distancia:</label>
-  <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" style="font-size: initial;">
-    <option value="corta" style="font-size: initial;">Corta</option>
-    <option value="media" style="font-size: initial;">Media</option>
-    <option value="larga" style="font-size: initial;">Larga</option>
-  </select>
+<form method="post" class="form-inline">
+ 
   <label class="my-1 mr-2" for="inlineFormCustomSelectPref" style="font-size: initial; font-weight: bold;">Tiempo:</label>
   <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" style="font-size: initial;">
     <option value="1" style="font-size: initial;">Moderado</option>
     <option value="2" style="font-size: initial;">Medio</option>
     <option value="3" style="font-size: initial;">Alto</option>
   </select>
+  <label class="my-1 mr-2" for="inlineFormCustomSelectPref" style="font-size: initial; font-weight: bold;">Precio:</label>
+  <select name = "precio" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" style="font-size: initial;">
+    <option value="1" style="font-size: initial;">Menos de 5.000</option>
+    <option value="2" style="font-size: initial;">Menos de 10.000</option>
+    <option value="3" style="font-size: initial;">Mayor de 10.000</option>
+  </select>
+  <label class="my-1 mr-2" for="inlineFormCustomSelectPref" style="font-size: initial; font-weight: bold;">Calificación:</label>
+  <select name = "calificacion" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" style="font-size: initial;">
+    <option value="1" style="font-size: initial;">1 estrella</option>
+    <option value="2" style="font-size: initial;">2 estrellas</option>
+    <option value="3" style="font-size: initial;">3 estrellas</option>
+    <option value="4" style="font-size: initial;">4 estrellas</option>
+    <option value="5" style="font-size: initial;">5 estrellas</option>
+  </select>
+
   <br></br>
-  <a class="btn btn-info" href="?seleccionarRuta" style="margin: auto;">Filtrar</a>
+  <div class="form-group row">    
+    <div class="col-md-12">
+     <input type="submit" name="filtrar" value="Filtrar" class="btn btn-info"/>
+    </div>
+  </div>
 </form>
 
-</div>
 
-    <div class="item3">
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Informacion</th>      
+           
+    </tr>
+  </thead>
+
+<?php
+
+
+
+if(isset($_POST['filtrar'])){
+
+$sql = "SELECT d.id, d.nombre, d.descripcion, d.latitud, d.longitud, d.urlSitio, d.tiempo, d.urlVideo, d.urlImagen, d.calificacion 
+FROM MiRutaCR.Destino d JOIN MiRutaCR.vecinos v ON d.id = v.id_vecino WHERE id_destino = 8"; 
+
+$ejecutar = mysqli_query($con, $sql);
+
+$i = 0;
+
+while($fila = mysqli_fetch_array($ejecutar)){
+      $id = $fila['id'];
+      $nombre = $fila['nombre'];
+      $descripcion = $fila['descripcion'];
+      $latitud = $fila['latitud'];
+      $longitud = $fila['longitud'];
+      $urlSitio = $fila['urlSitio'];
+      $tiempo = $fila['tiempo'];
+      $urlVideo = $fila['urlVideo'];
+      $urlImagen = $fila['urlImagen'];
+      $calificacion = $fila['calificacion'];
+
       
+      $i++;
+?>
 
-        
+  <tbody>
+    <tr>
+      <td><?php echo $nombre; ?></td>               
+      <td><button onclick="<?php $id; ?>" id="boton1" href="?seleccionarRuta=<?php echo $id; ?>" type="button" class="btn btn-primary"  data-toggle="modal" data-target="#exampleModalCenter1" style="background-color: #17a2b8; border-color: #17a2b8;">
+       Ver informacion</button></td>      
+    </tr>   
+  </tbody>
+
+<?php } ?>
+<?php } ?>  
+</table>
+
+</div>
+    <div class="item3">   
           <div id="map">
-          </div>
-
-         
-        
+          </div>  
     </div>
     <div class="item4">
     <?php
-
-
-
     ?>
-
-
        <div class="grid-containerA">
        <br></br>
        <button id="boton1" type="button" class="btn btn-primary"  data-toggle="modal" data-target="#exampleModalCenter1" style="background-color: #17a2b8; border-color: #17a2b8;">
@@ -136,6 +196,13 @@ Iglesia de Orosi
 </div>
 
 
+
+
+
+
+
+
+
 <!-- Modal -->
 <div class="modal fade bd-example-modal-lg" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
@@ -150,24 +217,34 @@ Iglesia de Orosi
         
         
       <div class="card" style="width: 50%; margin:auto;">
-  <img class="card-img-top" src="http://www.cartagohoy.com/wp-content/uploads/2019/01/7824126314_b37b2074a6_b.jpg" alt="Card image cap">
+ 
+
+  <div class="span4">
+         <div class="thumb1">
+         <div class="thumbnail clearfix">                                            
+					 <br><iframe width="500" height="260" 
+           src="<?php echo $urlVideo; ?>"  allowfullscreen ></iframe>
+         </div>
+         </div>
+  </div>
+
   <div class="card-body">
-    <p class="card-text">Parque La Laguna Doña Ana</p>
+    <p class="card-text"><?php echo $id; ?></p>
   </div>
 </div>
 <br></br>
 <div class="container">
-  <h1>Parque La Laguna Doña Ana</h1>
+  <h1><?php echo $nombre; ?></h1>
   <br></br>
   <div class="row">
     <div class="col-sm-6">
-      <p style="color: #17a2b8; font-weight: bold;">Ubicación:</p>
-      <p>Orosi, Cartago</p>
+      <p style="color: #17a2b8; font-weight: bold;">Calificación:</p>
+      <p><?php     if($calificacion == 1){       echo "★";     }elseif($calificacion == 2){       echo "★★";     }elseif($calificacion == 3){       echo "★★★";     }elseif($calificacion == 4){       echo "★★★★";     }else{       echo "★★★★★";     }          ?></p>
       <p></p>
     </div>
     <div class="col-sm-6">
       <p style="color: #17a2b8; font-weight: bold;">Descripción:</p>
-      <p>La Laguna de Doña Ana, es muy visitado tanto por adultos como por niños quienes tienen entrada gratuita. Igualmente es punto de recreo para instituciones educativas y de bien social.</p>
+      <p><?php echo $descripcion; ?></p>
     </div>
   </div>
 </div>
@@ -561,10 +638,32 @@ var longitud=-83.868433;
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
     <script src="view/js/holder.min.js"></script>
 
-
+    <script>
+function echoHello(){
+ alert("<?PHP hello(); ?>");
+ }
+</script>
 
 
 </form>
+
+<?php
+
+if(isset($_POST['submit'])){
+    
+  $tiempo = $_POST['tiempo'];
+  $precio = $_POST['precio'];
+  $calificacion = $_POST['calificacion'];   
+
+  $sql = "SELECT d.nombre, d.latitud, d.longitud FROM MiRutaCR.Destino d JOIN MiRutaCR.vecinos v ON d.id = v.id_vecino WHERE id_destino = 8"; 
+    
+    $ejecutar = mysqli_query($con, $sql);
+
+}
+?>
+
+
+
 <?php 
     
 ?>
