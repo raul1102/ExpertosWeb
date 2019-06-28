@@ -93,6 +93,32 @@
   </div>
 
   <div class="form-group row">
+   <label for="url" class="col-sm-3 col-form-label">Precio: </label>
+   <div class="col-md-8">
+   <select class="custom-select my-1 mr-sm-2" name="precio" id="precio" style="font-size: initial;">
+    <option selected></option>
+    <option value="1" style="font-size: initial;">Menor a 5000</option>
+    <option value="2" style="font-size: initial;">Entre 5000 y 10000</option>
+    <option value="3" style="font-size: initial;">Mayor a 10000</option>
+  </select>
+  </div>
+  </div>
+
+  <div class="form-group row">
+   <label for="url" class="col-sm-3 col-form-label">Calificacion: </label>
+   <div class="col-md-8">
+   <select class="custom-select my-1 mr-sm-2" name="calificacion" id="calificacion" style="font-size: initial;">
+    <option selected></option>
+    <option value="1" style="font-size: initial;">★</option>
+    <option value="2" style="font-size: initial;">★★</option>
+    <option value="3" style="font-size: initial;">★★★</option>
+    <option value="4" style="font-size: initial;">★★★★</option>
+    <option value="5" style="font-size: initial;">★★★★★</option>
+  </select>
+  </div>
+  </div>
+
+  <div class="form-group row">
     <label for="urlVideo" class="col-sm-3 col-form-label">URL del Video: </label>
     <div class="col-md-8">
       <input type="url" class="form-control" name="urlVideo" id="urlVideo" placeholder="https://www.MiRutaCR.com">
@@ -139,11 +165,13 @@ if(isset($_POST['submit'])){
       $longitud = $_POST['longitud'];
       $urlSitio = $_POST['urlSitio'];
       $tiempo = $_POST['tiempo'];
+      $precio = $_POST['precio'];
+      $calificacion = $_POST['calificacion'];
       $urlVideo = $_POST['urlVideo'];
       $urlImagen = $_POST['urlImagen'];   
 
-    $sql = "INSERT INTO Destino (nombre, descripcion, latitud, longitud, urlSitio, tiempo, urlVideo, urlImagen) 
-    values ('$nombre', '$descripcion', '$latitud', '$longitud', '$urlSitio', '$tiempo', '$urlVideo', '$urlImagen')"; 
+    $sql = "INSERT INTO Destino (nombre, descripcion, latitud, longitud, urlSitio, tiempo, precio, calificacion, urlVideo, urlImagen) 
+    values ('$nombre', '$descripcion', '$latitud', '$longitud', '$urlSitio', '$tiempo', '$precio', '$calificacion', '$urlVideo', '$urlImagen')"; 
     
     $ejecutar = mysqli_query($con, $sql);
 
