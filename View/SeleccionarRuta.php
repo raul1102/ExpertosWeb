@@ -110,7 +110,6 @@
   <div class="form-group row">    
     <div class="col-md-12">
      <input type="submit" name="filtrar" value="Opcion mas cercana" class="btn btn-info"/>
-     <input type="submit" name="filtrar2" value="Otra opcion" class="btn btn-info"/>
     </div>
   </div>
 </form>
@@ -148,6 +147,7 @@ while($fila = mysqli_fetch_array($ejecutar)){
       $tiempo = $fila['tiempo'];
       $precio = $fila['precio'];
       $urlVideo = $fila['urlVideo'];
+      $urlImagen = $fila['urlImagen'];
       $calificacion = $fila['calificacion'];
       $latitud2 = $fila['lat2'];
       $longitud2 = $fila['long2'];
@@ -229,6 +229,7 @@ while($fila = mysqli_fetch_array($ejecutar)){
       <p style="color: #17a2b8; font-weight: bold;">Calificación:</p>
       <p><?php     if($calificacion == 1){       echo "★";     }elseif($calificacion == 2){       echo "★★";     }elseif($calificacion == 3){       echo "★★★";     }elseif($calificacion == 4){       echo "★★★★";     }else{       echo "★★★★★";     }          ?></p>
       <p></p>
+      <p><img class="card-img-top" src="<?php echo $urlImagen; ?>" alt="Card image cap"></p>
     </div>
     <div class="col-sm-6">
       <p style="color: #17a2b8; font-weight: bold;">Descripción:</p>
@@ -363,21 +364,27 @@ while($fila = mysqli_fetch_array($ejecutar)){
         
         
       <div class="card" style="width: 50%; margin:auto;">
-  <img class="card-img-top" src="https://travelcostarica.cr/wp-content/uploads/2017/11/Iglesia-Colonial-del-Valle-de-Orosi-Cartago.png" alt="Card image cap">
-  <div class="card-body">
-    <p class="card-text">Iglesia Colonial del Valle de Orosi</p>
+      <div class="span4">
+         <div class="thumb1">
+         <div class="thumbnail clearfix">                                            
+					 <br><iframe width="500" height="260" 
+           src="https://www.youtube.com/watch?v=epREFEkrl2c"  allowfullscreen ></iframe>
+         </div>
+         </div>
   </div>
+ 
 </div>
 <br></br>
 <div class="container">
   <h1>Iglesia Colonial del Valle de Orosi</h1>
   <br></br>
   <div class="row">
-    <div class="col-sm-6">
-      <p style="color: #17a2b8; font-weight: bold;">Ubicación:</p>
-      <p>Orosi, Cartago</p>
-      <p></p>
-    </div>
+  <div class="col-sm-6">
+  <p style="color: #17a2b8; font-weight: bold;">Calificación:</p>
+  <p><?php     if($calificacion == 1){       echo "★";     }elseif($calificacion == 2){       echo "★★";     }elseif($calificacion == 3){       echo "★★★";     }elseif($calificacion == 4){       echo "★★★★";     }else{       echo "★★★★★";     }          ?></p>
+  <p></p>
+  <p><img class="card-img-top" src="https://travelcostarica.cr/wp-content/uploads/2017/11/Iglesia-Colonial-del-Valle-de-Orosi-Cartago.png" alt="Card image cap"></p>
+</div>
     <div class="col-sm-6">
       <p style="color: #17a2b8; font-weight: bold;">Descripción:</p>
       <p>Es una de las más antiguas edificaciones del país, que datan de la época de la Colonia española, que persisten hasta la actualidad.</p>
@@ -397,6 +404,120 @@ while($fila = mysqli_fetch_array($ejecutar)){
 
 </div>
 
+
+
+
+
+<!-- Modal balnerio -->
+<div class="modal fade bd-example-modal-lg" id="exampleModalCenter5" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Información sobre sitio</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        
+      <div class="card" style="width: 50%; margin:auto;">
+      <div class="span4">
+         <div class="thumb1">
+         <div class="thumbnail clearfix">                                            
+					 <br><iframe width="500" height="260" 
+           src="https://www.youtube.com/watch?v=YsdMkSHQJ9k"  allowfullscreen ></iframe>
+         </div>
+         </div>
+  </div>
+ 
+</div>
+<br></br>
+<div class="container">
+  <h1>Balneario los patio</h1>
+  <br></br>
+  <div class="row">
+  <div class="col-sm-6">
+  <p style="color: #17a2b8; font-weight: bold;">Calificación:</p>
+  <p><?php     if($calificacion == 1){       echo "★";     }elseif($calificacion == 2){       echo "★★";     }elseif($calificacion == 3){       echo "★★★";     }elseif($calificacion == 4){       echo "★★★★";     }else{       echo "★★★★★";     }          ?></p>
+  <p></p>
+  <p><img class="card-img-top" src="https://img2.10bestmedia.com/Images/Photos/234152/p-BalneariodeAguasTermales_54_990x660_201404241604.jpg" alt="Card image cap"></p>
+</div>
+    <div class="col-sm-6">
+      <p style="color: #17a2b8; font-weight: bold;">Descripción:</p>
+      <p>Es una de las más antiguas edificaciones del país, que datan de la época de la Colonia española, que persisten hasta la actualidad.</p>
+    </div>
+  </div>
+</div>
+
+<div class="modal-footer">
+<button type="button"  class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+<button type="button" id="bt4" onClick="funcion5()" class="btn btn-primary" style="background-color: #17a2b8; border-color: #17a2b8;">Agregar a la Ruta</button>
+ </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+
+
+<!-- Modal chuca -->
+<div class="modal fade bd-example-modal-lg" id="exampleModalCenter6" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Información sobre sitio</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        
+      <div class="card" style="width: 50%; margin:auto;">
+      <div class="span4">
+         <div class="thumb1">
+         <div class="thumbnail clearfix">                                            
+					 <br><iframe width="500" height="260" 
+           src="https://www.youtube.com/watch?v=Li2vQYVagWg"  allowfullscreen ></iframe>
+         </div>
+         </div>
+  </div>
+ 
+</div>
+<br></br>
+<div class="container">
+  <h1>Chucaras HotSprings</h1>
+  <br></br>
+  <div class="row">
+  <div class="col-sm-6">
+  <p style="color: #17a2b8; font-weight: bold;">Calificación:</p>
+  <p><?php     if($calificacion == 1){       echo "★";     }elseif($calificacion == 2){       echo "★★";     }elseif($calificacion == 3){       echo "★★★";     }elseif($calificacion == 4){       echo "★★★★";     }else{       echo "★★★★★";     }          ?></p>
+  <p></p>
+  <p><img class="card-img-top" src="https://media-cdn.tripadvisor.com/media/photo-s/0a/0c/a5/60/orosi.jpg" alt="Card image cap"></p>
+</div>
+    <div class="col-sm-6">
+      <p style="color: #17a2b8; font-weight: bold;">Descripción:</p>
+      <p>Es una de las más antiguas edificaciones del país, que datan de la época de la Colonia española, que persisten hasta la actualidad.</p>
+    </div>
+  </div>
+</div>
+
+<div class="modal-footer">
+<button type="button"  class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+<button type="button" id="bt4" onClick="funcion6()" class="btn btn-primary" style="background-color: #17a2b8; border-color: #17a2b8;">Agregar a la Ruta</button>
+ </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
 
   <script src="View/js/App.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxIhjbH4bZdvdWOhfuxQL93d0Um_El87k&libraries=places&callback=initAutocomplete" async defer></script>
@@ -533,6 +654,24 @@ var directionsService = new google.maps.DirectionsService;
         center: {lat: 41.85, lng: -87.65}
       });
       directionsDisplay.setMap(map);
+     
+      var marker = new google.maps.Marker({
+        position: {lat: 9.79464, lng: -83.856372},
+        map: map,
+      
+        title: 'Ver informacion'
+      });
+
+      map.addListener('center_changed', function() {
+        // 3 seconds after the center of the map has changed, pan back to the
+        // marker.
+        
+      });
+
+      marker.addListener('click', function() {
+        $("#exampleModalCenter5").modal('show');
+      });
+     
       latitud=9.798159;
       longitud=-83.855588;
      calculateAndDisplayRoute(directionsService, directionsDisplay);
@@ -545,9 +684,64 @@ var directionsService = new google.maps.DirectionsService;
 }
 
 function funcion5(){
-  $("#exampleModalCenter1").modal('show');
+ 
+var directionsService = new google.maps.DirectionsService;
+      var directionsDisplay = new google.maps.DirectionsRenderer;
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 6,
+        center: {lat: 41.85, lng: -87.65}
+      });
+      directionsDisplay.setMap(map);
+
+      var marker = new google.maps.Marker({
+        position: {lat: 9.770743, lng: -83.837818},
+        map: map,
+      
+        title: 'Ver informacion'
+      });
+
+      map.addListener('center_changed', function() {
+        // 3 seconds after the center of the map has changed, pan back to the
+        // marker.
+        
+      });
+
+      marker.addListener('click', function() {
+        $("#exampleModalCenter6").modal('show');
+      });
+     
+ 
+      latitud=9.79464;
+      longitud=-83.856372;
+     calculateAndDisplayRoute(directionsService, directionsDisplay);
+ sitios.push({"id_sitio":"1","nombre":"Hotel maria ","provincia":"Alajuela ","latitud":"-83.855588","longitud":"9.798159","url_video":"NULL","url_imagen":"NULL","calificacion":"3","descripcion":"NULL","duracion":"Corto "});
+      
+ $("#exampleModalCenter5").modal('hide');//ocultamos el modal
+  $('body').removeClass('modal-open');//eliminamos la clase del body para poder hacer scroll
+  $('.modal-backdrop').remove();
+  document.getElementById("bt4").disabled = true;
 }
 
+function funcion6(){
+ 
+var directionsService = new google.maps.DirectionsService;
+      var directionsDisplay = new google.maps.DirectionsRenderer;
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 6,
+        center: {lat: 41.85, lng: -87.65}
+      });
+      directionsDisplay.setMap(map);
+
+      latitud=9.770743;
+      longitud=-83.837818;
+     calculateAndDisplayRoute(directionsService, directionsDisplay);
+ sitios.push({"id_sitio":"1","nombre":"Hotel maria ","provincia":"Alajuela ","latitud":"-83.855588","longitud":"9.798159","url_video":"NULL","url_imagen":"NULL","calificacion":"3","descripcion":"NULL","duracion":"Corto "});
+      
+ $("#exampleModalCenter6").modal('hide');//ocultamos el modal
+  $('body').removeClass('modal-open');//eliminamos la clase del body para poder hacer scroll
+  $('.modal-backdrop').remove();
+  document.getElementById("bt4").disabled = true;
+}
 
 
 

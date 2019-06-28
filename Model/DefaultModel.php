@@ -45,7 +45,7 @@ class DefaultModel{
     } 
     else if(isset($_GET['seleccionarRuta'])) {
       
-      include('View/seleccionarRuta.php');      
+      include('View/SeleccionarRuta.php');      
     
     } else if(isset($_GET['confirmacionDeshabilitar'])) {
       
