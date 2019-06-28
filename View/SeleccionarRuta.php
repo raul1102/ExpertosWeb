@@ -109,7 +109,8 @@
   <br></br>
   <div class="form-group row">    
     <div class="col-md-12">
-     <input type="submit" name="filtrar" value="Filtrar" class="btn btn-info"/>
+     <input type="submit" name="filtrar" value="Opcion mas cercana" class="btn btn-info"/>
+     <input type="submit" name="filtrar2" value="Otras opcion" class="btn btn-info"/>
     </div>
   </div>
 </form>
@@ -134,6 +135,7 @@ if(isset($_POST['filtrar'])){
 
 $sql = "SELECT d.id, d.nombre, d.descripcion, d.latitud, d.longitud, d.urlSitio, d.tiempo, d.urlVideo, d.urlImagen, d.calificacion 
 FROM MiRutaCR.Destino d JOIN MiRutaCR.vecinos v ON d.id = v.id_vecino WHERE id_destino = 8 ORDER BY id_vecino ASC LIMIT 1"; 
+
 
 $ejecutar = mysqli_query($con, $sql);
 
@@ -166,20 +168,26 @@ while($fila = mysqli_fetch_array($ejecutar)){
 <?php } ?>
 <?php } ?>  
 </table>
+
+
+
+
+
+
+
+
+
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">Nombre</th>
-      <th scope="col">Informacion</th>      
-           
+             
     </tr>
   </thead>
 
 <?php
 
 
-
-if(isset($_POST['filtrar'])){
+if(isset($_POST['filtrar2'])){
 
 $sql = "SELECT d.id, d.nombre, d.descripcion, d.latitud, d.longitud, d.urlSitio, d.tiempo, d.urlVideo, d.urlImagen, d.calificacion 
 FROM MiRutaCR.Destino d JOIN MiRutaCR.vecinos v ON d.id = v.id_vecino WHERE id_destino = 8 ORDER BY id_vecino DESC LIMIT 1"; 
