@@ -58,9 +58,10 @@
       <th scope="col">Nombre</th>
       <th scope="col">Descripción</th>
       <th scope="col">Latitud</th>
-      <th scope="col">Longitud</th>
-      <th scope="col">URL</th>
-      <th scope="col">Tiempo</th>      
+      <th scope="col">Longitud</th>      
+      <th scope="col">Tiempo</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Calificacion</th>      
            
     </tr>
   </thead>
@@ -81,6 +82,8 @@ while($fila = mysqli_fetch_array($ejecutar)){
       $longitud = $fila['longitud'];
       $urlSitio = $fila['urlSitio'];
       $tiempo = $fila['tiempo'];
+      $precio = $fila['precio'];
+      $calificacion = $fila['calificacion'];
       $urlVideo = $fila['urlVideo'];
       $urlImagen = $fila['urlImagen']; 
       
@@ -93,9 +96,10 @@ while($fila = mysqli_fetch_array($ejecutar)){
       <td><?php echo $nombre; ?></td>
       <td><?php echo $descripcion; ?></td>
       <td><?php echo $latitud; ?></td>
-      <td><?php echo $longitud; ?></td>
-      <td><?php echo $urlSitio; ?></td>      
-      <td><?php echo $tiempo; ?></td>                
+      <td><?php echo $longitud; ?></td>           
+      <td><?php echo $tiempo; ?></td>  
+      <td><?php echo $precio; ?></td>
+      <td><?php echo $calificacion; ?></td>              
       <td><a class="btn btn-info" href="?modificarSitio=<?php echo $id; ?>">Modificar</a></td>      
     </tr>   
   </tbody>

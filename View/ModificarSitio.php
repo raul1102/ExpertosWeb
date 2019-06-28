@@ -20,6 +20,8 @@
       $longitud = $fila['longitud'];
       $urlSitio = $fila['urlSitio'];
       $tiempo = $fila['tiempo'];
+      $precio = $fila['precio'];
+      $calificacion = $fila['calificacion'];
       $urlVideo = $fila['urlVideo'];
       $urlImagen = $fila['urlImagen']; 
   }
@@ -119,6 +121,66 @@
   </div>
   </div>
 
+
+    <div class="form-group row">
+   <label for="url" class="col-sm-3 col-form-label">Precio: </label>
+   <div class="col-md-8">
+   <select class="custom-select my-1 mr-sm-2" name="precio" id="precio" style="font-size: initial;">
+    <option selected>
+    <?php
+    if($precio == 1){
+      echo "Menor a 5000";
+    }elseif($precio == 2){
+      echo "Entre 5000 y 10000";
+    }else{
+      echo "Mayor a 10000";
+    }
+    
+    ?>
+    </option>
+    <option value="1" style="font-size: initial;">Menor a 5000</option>
+    <option value="2" style="font-size: initial;">Entre 5000 y 10000</option>
+    <option value="3" style="font-size: initial;">Mayor a 10000</option>
+  </select>
+  </div>
+  </div>
+
+  <div class="form-group row">
+   <label for="url" class="col-sm-3 col-form-label">Calificacion: </label>
+   <div class="col-md-8">
+   <select class="custom-select my-1 mr-sm-2" name="calificacion" id="calificacion" style="font-size: initial;">
+    <option selected>
+    
+    <?php
+    if($calificacion == 1){
+      echo "★";
+    }elseif($calificacion == 2){
+      echo "★★";
+    }elseif($calificacion == 3){
+      echo "★★★";
+    }elseif($calificacion == 4){
+      echo "★★★★";
+    }else{
+      echo "★★★★★";
+    }
+    
+    ?>    
+    
+    </option>
+    <option value="1" style="font-size: initial;">★</option>
+    <option value="2" style="font-size: initial;">★★</option>
+    <option value="3" style="font-size: initial;">★★★</option>
+    <option value="4" style="font-size: initial;">★★★★</option>
+    <option value="5" style="font-size: initial;">★★★★★</option>
+  </select>
+  </div>
+  </div>
+
+
+
+
+
+
   <div class="form-group row">
     <label for="urlVideo" class="col-sm-3 col-form-label">URL del Video: </label>
     <div class="col-md-8">
@@ -160,10 +222,12 @@ if(isset($_POST['submit'])){
   $actualizar_longitud = $_POST['longitud'];
   $actualizar_urlSitio = $_POST['urlSitio'];
   $actualizar_tiempo = $_POST['tiempo'];
+  $actualizar_precio = $_POST['precio'];
+  $actualizar_calificacion = $_POST['calificacion'];
   $actualizar_urlVideo = $_POST['urlVideo'];
   $actualizar_urlImagen = $_POST['urlImagen']; 
 
-  $consulta = "UPDATE MiRutaCR.Destino SET nombre='$actualizar_nombre', descripcion='$actualizar_descripcion', latitud='$actualizar_latitud', longitud='$actualizar_longitud', urlSitio='$actualizar_urlSitio', tiempo='$actualizar_tiempo', urlVideo='$actualizar_urlVideo', urlImagen='$actualizar_urlImagen' WHERE id='$id_registro'";
+  $consulta = "UPDATE MiRutaCR.Destino SET nombre='$actualizar_nombre', descripcion='$actualizar_descripcion', latitud='$actualizar_latitud', longitud='$actualizar_longitud', urlSitio='$actualizar_urlSitio', tiempo='$actualizar_tiempo', precio='$actualizar_precio', calificacion='$actualizar_calificacion', urlVideo='$actualizar_urlVideo', urlImagen='$actualizar_urlImagen' WHERE id='$id_registro'";
 
   $ejecutarConsulta = mysqli_query($con, $consulta);
 
