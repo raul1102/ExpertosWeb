@@ -133,7 +133,56 @@
 if(isset($_POST['filtrar'])){
 
 $sql = "SELECT d.id, d.nombre, d.descripcion, d.latitud, d.longitud, d.urlSitio, d.tiempo, d.urlVideo, d.urlImagen, d.calificacion 
-FROM MiRutaCR.Destino d JOIN MiRutaCR.vecinos v ON d.id = v.id_vecino WHERE id_destino = 8"; 
+FROM MiRutaCR.Destino d JOIN MiRutaCR.vecinos v ON d.id = v.id_vecino WHERE id_destino = 8 ORDER BY id_vecino ASC LIMIT 1"; 
+
+$ejecutar = mysqli_query($con, $sql);
+
+$i = 0;
+
+while($fila = mysqli_fetch_array($ejecutar)){
+      $id = $fila['id'];
+      $nombre = $fila['nombre'];
+      $descripcion = $fila['descripcion'];
+      $latitud = $fila['latitud'];
+      $longitud = $fila['longitud'];
+      $urlSitio = $fila['urlSitio'];
+      $tiempo = $fila['tiempo'];
+      $urlVideo = $fila['urlVideo'];
+      $urlImagen = $fila['urlImagen'];
+      $calificacion = $fila['calificacion'];
+
+      
+      $i++;
+?>
+
+  <tbody>
+    <tr>
+      <td><?php echo $nombre; ?></td>               
+      <td><button onclick="<?php $id; ?>" id="boton1" href="?seleccionarRuta=<?php echo $id; ?>" type="button" class="btn btn-primary"  data-toggle="modal" data-target="#exampleModalCenter1" style="background-color: #17a2b8; border-color: #17a2b8;">
+       Ver informacion</button></td>      
+    </tr>   
+  </tbody>
+
+<?php } ?>
+<?php } ?>  
+</table>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Informacion</th>      
+           
+    </tr>
+  </thead>
+
+<?php
+
+
+
+if(isset($_POST['filtrar'])){
+
+$sql = "SELECT d.id, d.nombre, d.descripcion, d.latitud, d.longitud, d.urlSitio, d.tiempo, d.urlVideo, d.urlImagen, d.calificacion 
+FROM MiRutaCR.Destino d JOIN MiRutaCR.vecinos v ON d.id = v.id_vecino WHERE id_destino = 8 ORDER BY id_vecino DESC LIMIT 1"; 
 
 $ejecutar = mysqli_query($con, $sql);
 
