@@ -86,7 +86,7 @@
 <form method="post" class="form-inline">
  
   <label class="my-1 mr-2" for="inlineFormCustomSelectPref" style="font-size: initial; font-weight: bold;">Tiempo:</label>
-  <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" style="font-size: initial;">
+  <select name="tiempo" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" style="font-size: initial;">
     <option value="1" style="font-size: initial;">Moderado</option>
     <option value="2" style="font-size: initial;">Medio</option>
     <option value="3" style="font-size: initial;">Alto</option>
@@ -110,70 +110,10 @@
   <div class="form-group row">    
     <div class="col-md-12">
      <input type="submit" name="filtrar" value="Opcion mas cercana" class="btn btn-info"/>
-     <input type="submit" name="filtrar2" value="Otras opcion" class="btn btn-info"/>
+     <input type="submit" name="filtrar2" value="Otra opcion" class="btn btn-info"/>
     </div>
   </div>
 </form>
-
-
-
-
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Nombre</th>
-      <th scope="col">Informacion</th>      
-           
-    </tr>
-  </thead>
-
-<?php
-
-
-
-if(isset($_POST['filtrar'])){
-
-$sql = "SELECT d.id, d.nombre, d.descripcion, d.latitud, d.longitud, d.urlSitio, d.tiempo, d.urlVideo, d.urlImagen, d.calificacion 
-FROM MiRutaCR.Destino d JOIN MiRutaCR.vecinos v ON d.id = v.id_vecino WHERE id_destino = 8 ORDER BY id_vecino ASC LIMIT 1"; 
-
-
-$ejecutar = mysqli_query($con, $sql);
-
-$i = 0;
-
-while($fila = mysqli_fetch_array($ejecutar)){
-      $id = $fila['id'];
-      $nombre = $fila['nombre'];
-      $descripcion = $fila['descripcion'];
-      $latitud = $fila['latitud'];
-      $longitud = $fila['longitud'];
-      $urlSitio = $fila['urlSitio'];
-      $tiempo = $fila['tiempo'];
-      $urlVideo = $fila['urlVideo'];
-      $urlImagen = $fila['urlImagen'];
-      $calificacion = $fila['calificacion'];
-
-      
-      $i++;
-?>
-
-  <tbody>
-    <tr>
-      <td><?php echo $nombre; ?></td>               
-      <td><button onclick="<?php $id; ?>" id="boton1" href="?seleccionarRuta=<?php echo $id; ?>" type="button" class="btn btn-primary"  data-toggle="modal" data-target="#exampleModalCenter1" style="background-color: #17a2b8; border-color: #17a2b8;">
-       Ver informacion</button></td>      
-    </tr>   
-  </tbody>
-
-<?php } ?>
-<?php } ?>  
-</table>
-
-
-
-
-
-
 
 
 
@@ -187,26 +127,30 @@ while($fila = mysqli_fetch_array($ejecutar)){
 <?php
 
 
-if(isset($_POST['filtrar2'])){
+if(isset($_POST['filtrar'])){
 
-$sql = "SELECT d.id, d.nombre, d.descripcion, d.latitud, d.longitud, d.urlSitio, d.tiempo, d.urlVideo, d.urlImagen, d.calificacion 
-FROM MiRutaCR.Destino d JOIN MiRutaCR.vecinos v ON d.id = v.id_vecino WHERE id_destino = 8 ORDER BY id_vecino DESC LIMIT 1"; 
+  $tiempo = $_POST['tiempo'];
+  $precio = $_POST['precio'];
+  $calificacion = $_POST['calificacion']; 
+  
+
+$sql = "Select d.*, sub.lat2,sub.long2, sub.id_destino from MiRutaCR.Destino d ,(Select d.latitud as lat2 ,d.longitud as long2,v.id_destino from MiRutaCR.vecinos v join MiRutaCR.Destino d on d.id=id_vecino) as sub where sub.id_destino=d.id and id_destino=4 and d.tiempo=$tiempo and d.precio =$precio and d.calificacion=$calificacion limit 1"; 
 
 $ejecutar = mysqli_query($con, $sql);
 
 $i = 0;
 
 while($fila = mysqli_fetch_array($ejecutar)){
-      $id = $fila['id'];
       $nombre = $fila['nombre'];
       $descripcion = $fila['descripcion'];
       $latitud = $fila['latitud'];
       $longitud = $fila['longitud'];
-      $urlSitio = $fila['urlSitio'];
       $tiempo = $fila['tiempo'];
+      $precio = $fila['precio'];
       $urlVideo = $fila['urlVideo'];
-      $urlImagen = $fila['urlImagen'];
       $calificacion = $fila['calificacion'];
+      $latitud2 = $fila['lat2'];
+      $longitud2 = $fila['long2'];
 
       
       $i++;
@@ -215,12 +159,14 @@ while($fila = mysqli_fetch_array($ejecutar)){
   <tbody>
     <tr>
       <td><?php echo $nombre; ?></td>               
-      <td><button onclick="<?php $id; ?>" id="boton1" href="?seleccionarRuta=<?php echo $id; ?>" type="button" class="btn btn-primary"  data-toggle="modal" data-target="#exampleModalCenter1" style="background-color: #17a2b8; border-color: #17a2b8;">
+      <td><button  id="boton1"  type="button" class="btn btn-primary"  data-toggle="modal" data-target="#exampleModalCenter1" style="background-color: #17a2b8; border-color: #17a2b8;">
        Ver informacion</button></td>      
     </tr>   
   </tbody>
 
 <?php } ?>
+
+
 <?php } ?>  
 </table>
 
@@ -229,23 +175,12 @@ while($fila = mysqli_fetch_array($ejecutar)){
           <div id="map">
           </div>  
     </div>
+   
     <div class="item4">
     <?php
     ?>
        <div class="grid-containerA">
-       <br></br>
-       <button id="boton1" type="button" class="btn btn-primary"  data-toggle="modal" data-target="#exampleModalCenter1" style="background-color: #17a2b8; border-color: #17a2b8;">
-       Parque la laguna Doña Ana
-</button><br></br>
-<button  id="boton2" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2" style="background-color: #17a2b8; border-color: #17a2b8;">
-Jardin Botanico
-</button><br></br>
-<button id="boton3" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter3" style="background-color: #17a2b8; border-color: #17a2b8;">
-Mirador de Orosi
-</button><br></br>
-<button id="boton4" type="button" class="btn btn-primary" data-toggle="modal"  data-target="#exampleModalCenter4" style="background-color: #17a2b8; border-color: #17a2b8;">
-Iglesia de Orosi
-</button>
+
      
        
         </div>
@@ -273,7 +208,7 @@ Iglesia de Orosi
       <div class="modal-body">
         
         
-      <div class="card" style="width: 50%; margin:auto;">
+
  
 
   <div class="span4">
@@ -285,10 +220,6 @@ Iglesia de Orosi
          </div>
   </div>
 
-  <div class="card-body">
-    <p class="card-text"><?php echo $id; ?></p>
-  </div>
-</div>
 <br></br>
 <div class="container">
   <h1><?php echo $nombre; ?></h1>
@@ -308,7 +239,7 @@ Iglesia de Orosi
 
 <div class="modal-footer">
 <button type="button"  class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-<button type="button" id="bt1" onClick="funcion1()" class="btn btn-primary" style="background-color: #17a2b8; border-color: #17a2b8;">Agregar a la Ruta</button>
+<button type="button" id="bt1" onClick="funcion3(<?php echo $latitud; ?>,<?php echo $longitud; ?>,<?php echo $latitud2; ?>,<?php echo $longitud2; ?>)" class="btn btn-primary" style="background-color: #17a2b8; border-color: #17a2b8;">Agregar a la Ruta</button>
  </div>
       </div>
     </div>
@@ -476,7 +407,7 @@ Iglesia de Orosi
  var sitios = [];
  
 
-function funcion1(){
+function funcion1(latitud, logitud){
 
   var directionsService = new google.maps.DirectionsService;
         var directionsDisplay = new google.maps.DirectionsRenderer;
@@ -487,7 +418,7 @@ function funcion1(){
         directionsDisplay.setMap(map);
 
         var marker = new google.maps.Marker({
-        position: {lat: 9.839486, lng: -83.890180},
+        position: {lat: 9.818776, lng: -83.858319},
         map: map,
       
         title: 'Ver informacion'
@@ -554,7 +485,7 @@ function funcion2(){
 
 }
 
-function funcion3(){
+function funcion3(latitudV, longitudV,latitudS, longitudS){
 
 var directionsService = new google.maps.DirectionsService;
       var directionsDisplay = new google.maps.DirectionsRenderer;
@@ -565,7 +496,7 @@ var directionsService = new google.maps.DirectionsService;
       directionsDisplay.setMap(map);
 
       var marker = new google.maps.Marker({
-        position: {lat: 9.798159, lng: -83.855588},
+        position: {lat: latitudS, lng: longitudS},
         map: map,
       
         title: 'Ver informacion'
@@ -581,8 +512,8 @@ var directionsService = new google.maps.DirectionsService;
         $("#exampleModalCenter4").modal('show');
       });
 
-      latitud=9.818617;
-      longitud=-83.858258;
+      latitud=latitudV;
+      longitud=longitudV;
      calculateAndDisplayRoute(directionsService, directionsDisplay);
      sitios.push({"id_sitio":"1","nombre":"Hotel maria ","provincia":"Alajuela ","latitud":"-83.858258","longitud":"9.818617","url_video":"NULL","url_imagen":"NULL","calificacion":"3","descripcion":"NULL","duracion":"Corto "});
 
@@ -647,7 +578,11 @@ function funcion5(){
       marker.addListener('click', function() {
         $("#exampleModalCenter1").modal('show');
       });
-       
+       <?php
+       echo $destino=4;
+       ?>
+
+
           calculateAndDisplayRoute(directionsService, directionsDisplay);
       }
 var latitud=9.827605;
